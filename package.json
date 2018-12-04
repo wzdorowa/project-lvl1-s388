@@ -1,6 +1,6 @@
 {
   "name": "project-bg388",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Test project brain-games",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -20,7 +20,7 @@
   "author": "wzdorowa",
   "keywords": [
     "brain-games"
-  ], 
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/wzdorowa/project-lvl1-s388/issues"
