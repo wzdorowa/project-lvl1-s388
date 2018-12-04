@@ -1,8 +1,7 @@
 {
   "name": "project-bg388",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Test project brain-games",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
@@ -18,7 +17,10 @@
    "files": [
     "dist"
   ],
-  "author": "",
+  "author": "wzdorowa",
+  "keywords": [
+    "brain-games"
+  ], 
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/wzdorowa/project-lvl1-s388/issues"
