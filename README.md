@@ -7,7 +7,7 @@
 
 ## Setup
 
-sudo npm i -g project-bg388
+$ sudo npm i -g project-bg388
 
 ## Sample game installation. Game launch
 
