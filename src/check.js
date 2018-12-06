@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import userName from './bin/brain-even';
+import greet from './greet';
 
 const yes = 'yes';
 const no = 'no';
@@ -24,10 +24,11 @@ const checkParity = (question) => {
 };
 
 const check = () => {
+  const nameUser = greet();
   let correctAnswers = 0;
   for (let i = 0; i <= 3; i += 1) {
     if (correctAnswers === 3) {
-      console.log(`Congratulation, ${userName}!`);
+      console.log(`Congratulation, ${nameUser}!`);
       return;
     }
     const question = askQuestion();
@@ -38,6 +39,7 @@ const check = () => {
       console.log('Correct!');
     } else {
       console.log(`${answer} is wrong answer ;(. Correct answer was ${parity}.`);
+      console.log(`Let's try again, ${nameUser}!`);
       return;
     }
   }
