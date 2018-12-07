@@ -11,4 +11,4 @@ $ sudo npm i -g project-bg388
 
 ## Sample game installation. Game launch
 
-https://asciinema.org/a/PWqEAXhNAQ6shUyjQnJ0dQ434
+https://asciinema.org/a/MJaielHMGCrFmnbnuMe2CibqS
