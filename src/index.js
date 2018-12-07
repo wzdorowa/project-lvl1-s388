@@ -1,4 +1,3 @@
-import greet from './greet';
-import check from './check';
+import run from './run';
 
-export { greet, check };
+export default run;

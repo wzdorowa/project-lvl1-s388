@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-import { greet } from '..';
+import run from '../run';
 
-console.log('Welcome to the Brain Games!');
-
-greet();
+run();

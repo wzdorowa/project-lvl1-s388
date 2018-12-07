@@ -12,8 +12,7 @@
     "url": "git+https://github.com/wzdorowa/project-lvl1-s388.git"
   },
   "bin": {
-    "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-games": "dist/bin/brain-games.js"
   },
   "files": [
     "dist"

@@ -1,9 +1,6 @@
 install:
 	npm install
 
-start-even:
-	npx babel-node -- src/bin/brain-even.js
-
 start-games:
 	npx babel-node -- src/bin/brain-games.js
 
@@ -12,3 +9,6 @@ publish:
 
 lint:
 	npx eslint .
+
+fix-lint:
+	npx eslint . --fix
