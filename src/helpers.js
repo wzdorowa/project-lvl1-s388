@@ -28,3 +28,8 @@ export const applyOperation = (sign, firstNum, lastNum) => {
     default: return console.log('Unknown value');
   }
 };
+
+export const findGcd = (a, b) => {
+  if (b === 0) return a;
+  return findGcd(b, a % b);
+};
