@@ -11,4 +11,10 @@ $ sudo npm i -g project-bg388
 
 ## Sample game installation. Game launch
 
+### Calculator
+
 https://asciinema.org/a/MJaielHMGCrFmnbnuMe2CibqS
+
+### GCD
+
+https://asciinema.org/a/hGPtHReqha277kOGECquRpErq
