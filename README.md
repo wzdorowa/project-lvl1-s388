@@ -11,10 +11,18 @@ $ sudo npm i -g project-bg388
 
 ## Sample game installation. Game launch
 
+### Brain games
+
+https://asciinema.org/a/Y0gMgpq2zgdIvogOVJucTtoeC
+
 ### Calculator
 
-https://asciinema.org/a/MJaielHMGCrFmnbnuMe2CibqS
+https://asciinema.org/a/HVPt68X6PF8OpeCqdrC3dFbaQ
+
+### Brain even
+
+https://asciinema.org/a/m6py31RWyc6zwMZnr7TQszuLj
 
 ### GCD
 
-https://asciinema.org/a/hGPtHReqha277kOGECquRpErq
+https://asciinema.org/a/P2TcMNUkm2e1AjoyglGViYfib
