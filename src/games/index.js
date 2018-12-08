@@ -1,5 +1,5 @@
-import check from './defineEven';
-import calculator from './calculator';
-import gcd from './gcd';
+import playCalc from './calculator';
+import playEven from './defineEven';
+import playGcd from './gcd';
 
-export { check, calculator, gcd };
+export { playCalc, playEven, playGcd };

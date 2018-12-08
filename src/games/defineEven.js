@@ -1,25 +1,20 @@
-import readlineSync from 'readline-sync';
-import { greet, getRandomInRange, isEven } from '../helpers';
+import { getRandomInRange } from '../helpers';
+import engine from './engine';
 
-const rightAnswersCount = 3;
-const defineEven = () => {
-  console.log('Answer "yes" if number even otherwise answer "no".');
+const isEven = num => num % 2 === 0;
 
-  const nameUser = greet();
-  for (let iter = 0; iter < rightAnswersCount; iter += 1) {
-    const question = getRandomInRange(1, 10);
-    const rightAnswer = (isEven(question)) ? 'yes' : 'no';
-    console.log(`Question: ${question}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (rightAnswer === answer) {
-      console.log('Correct!');
-    } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${rightAnswer}.`);
-      console.log(`Let's try again, ${nameUser}!`);
-      return;
-    }
-  }
-  console.log(`Congratulation, ${nameUser}!`);
+const description = 'Answer "yes" if number even otherwise answer "no".';
+
+const getQuestion = () => {
+  const firstQuestion = getRandomInRange(1, 10);
+
+  const question = {
+    value: firstQuestion,
+  };
+  return question;
 };
 
-export default defineEven;
+const getRightAnswer = question => ((isEven(question.value)) ? 'yes' : 'no');
+
+const play = () => engine(description, getQuestion, getRightAnswer);
+export default play;

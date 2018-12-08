@@ -1,3 +1,1 @@
-import run from './run';
-
-export default run;
+export * from './games';

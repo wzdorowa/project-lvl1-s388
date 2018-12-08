@@ -1,29 +1,31 @@
-import readlineSync from 'readline-sync';
-import {
-  greet, getRandomInRange, findGcd,
-} from '../helpers';
+import { getRandomInRange } from '../helpers';
+import engine from './engine';
 
-const rightAnswersCount = 3;
-const gcd = () => {
-  console.log('Find the greatest common divisor of given numbers.');
-  const nameUser = greet();
-
-  for (let iter = 0; iter < rightAnswersCount; iter += 1) {
-    const firstQuestion = getRandomInRange(1, 30);
-    const lastQuestion = getRandomInRange(1, 20);
-
-    const rightAnswer = findGcd(firstQuestion, lastQuestion);
-    console.log(`Question: ${firstQuestion} ${lastQuestion}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (String(rightAnswer) === answer) {
-      console.log('Correct!');
-    } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${rightAnswer}.`);
-      console.log(`Let's try again, ${nameUser}!`);
-      return;
-    }
-  }
-  console.log(`Congratulation, ${nameUser}!`);
+export const findGcd = (a, b) => {
+  if (b === 0) return a;
+  return findGcd(b, a % b);
 };
 
-export default gcd;
+const description = 'Find the greatest common divisor of given numbers.';
+
+const getQuestion = () => {
+  const firstQuestion = getRandomInRange(1, 30);
+  const lastQuestion = getRandomInRange(1, 20);
+
+  const question = {
+    value: `${firstQuestion} ${lastQuestion}`,
+    payload: {
+      firstQuestion,
+      lastQuestion,
+    },
+  };
+  return question;
+};
+
+const getRightAnswer = question => findGcd(
+  question.payload.firstQuestion,
+  question.payload.lastQuestion,
+);
+
+const play = () => engine(description, getQuestion, getRightAnswer);
+export default play;

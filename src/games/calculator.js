@@ -1,30 +1,48 @@
-import readlineSync from 'readline-sync';
-import {
-  greet, getRandomInRange, getRandomOperationSign, applyOperation,
-} from '../helpers';
+import { getRandomInRange } from '../helpers';
+import engine from './engine';
 
-const rightAnswersCount = 3;
-const calculator = () => {
-  console.log('What is the result of the expression?');
-  const nameUser = greet();
-
-  for (let iter = 0; iter < rightAnswersCount; iter += 1) {
-    const firstQuestion = getRandomInRange(1, 30);
-    const lastQuestion = getRandomInRange(1, 20);
-    const sign = getRandomOperationSign();
-    const rightAnswer = applyOperation(sign, firstQuestion, lastQuestion);
-
-    console.log(`Question: ${firstQuestion} ${sign} ${lastQuestion}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (String(rightAnswer) === answer) {
-      console.log('Correct!');
-    } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${rightAnswer}.`);
-      console.log(`Let's try again, ${nameUser}!`);
-      return;
-    }
+const getRandomOperationSign = () => {
+  const randomSign = getRandomInRange(1, 3);
+  switch (randomSign) {
+    case 1: return '+';
+    case 2: return '-';
+    case 3: return '*';
+    default: return console.log('Unknown value');
   }
-  console.log(`Congratulation, ${nameUser}!`);
 };
 
-export default calculator;
+const applyOperation = (sign, firstNum, lastNum) => {
+  switch (sign) {
+    case '+': return firstNum + lastNum;
+    case '-': return firstNum - lastNum;
+    case '*': return firstNum * lastNum;
+    default: return console.log('Unknown value');
+  }
+};
+
+export const description = 'What is the result of the expression?';
+
+export const getQuestion = () => {
+  const firstQuestion = getRandomInRange(1, 30);
+  const lastQuestion = getRandomInRange(1, 20);
+  const sign = getRandomOperationSign();
+
+  const question = {
+    value: `${firstQuestion} ${sign} ${lastQuestion}`,
+    payload: {
+      firstQuestion,
+      lastQuestion,
+      sign,
+    },
+  };
+
+  return question;
+};
+
+export const getRightAnswer = question => applyOperation(
+  question.payload.sign,
+  question.payload.firstQuestion,
+  question.payload.lastQuestion,
+);
+const play = () => engine(description, getQuestion, getRightAnswer);
+export default play;
