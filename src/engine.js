@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { greet } from '../helpers';
+import { greet } from './helpers';
 
 console.log('Welcome to the Brain Games!');
 const rightAnswersCount = 3;

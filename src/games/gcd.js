@@ -1,5 +1,5 @@
 import { getRandomInRange } from '../helpers';
-import engine from './engine';
+import engine from '../engine';
 
 export const findGcd = (a, b) => {
   if (b === 0) return a;
