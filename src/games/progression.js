@@ -15,9 +15,9 @@ const generateProgression = (startNum, step, hidden, n) => {
   return progression;
 };
 
-export const description = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
-export const getGameData = () => {
+const getGameData = () => {
   const startNum = getRandomInRange(1, 1000);
   const step = getRandomInRange(1, 20);
   const n = 10;
