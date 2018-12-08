@@ -1,5 +1,5 @@
 import { getRandomInRange } from '../helpers';
-import engine from './engine';
+import engine from '../engine';
 
 const getRandomOperationSign = () => {
   const randomSign = getRandomInRange(1, 3);

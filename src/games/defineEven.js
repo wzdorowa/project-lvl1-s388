@@ -1,5 +1,5 @@
 import { getRandomInRange } from '../helpers';
-import engine from './engine';
+import engine from '../engine';
 
 const isEven = num => num % 2 === 0;
 
