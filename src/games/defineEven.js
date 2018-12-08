@@ -5,16 +5,15 @@ const isEven = num => num % 2 === 0;
 
 const description = 'Answer "yes" if number even otherwise answer "no".';
 
-const getQuestion = () => {
-  const firstQuestion = getRandomInRange(1, 10);
+const getGameData = () => {
+  const question = getRandomInRange(1, 10);
 
-  const question = {
-    value: firstQuestion,
+  const answer = (isEven(question)) ? 'yes' : 'no';
+
+  return {
+    question,
+    answer,
   };
-  return question;
 };
 
-const getRightAnswer = question => ((isEven(question.value)) ? 'yes' : 'no');
-
-const play = () => engine(description, getQuestion, getRightAnswer);
-export default play;
+export default() => engine(description, getGameData);

@@ -22,27 +22,18 @@ const applyOperation = (sign, firstNum, lastNum) => {
 
 export const description = 'What is the result of the expression?';
 
-export const getQuestion = () => {
+export const getGameData = () => {
   const firstQuestion = getRandomInRange(1, 30);
   const lastQuestion = getRandomInRange(1, 20);
   const sign = getRandomOperationSign();
 
-  const question = {
-    value: `${firstQuestion} ${sign} ${lastQuestion}`,
-    payload: {
-      firstQuestion,
-      lastQuestion,
-      sign,
-    },
+  const question = `${firstQuestion} ${sign} ${lastQuestion}`;
+
+  const answer = applyOperation(sign, firstQuestion, lastQuestion);
+
+  return {
+    question,
+    answer,
   };
-
-  return question;
 };
-
-export const getRightAnswer = question => applyOperation(
-  question.payload.sign,
-  question.payload.firstQuestion,
-  question.payload.lastQuestion,
-);
-const play = () => engine(description, getQuestion, getRightAnswer);
-export default play;
+export default() => engine(description, getGameData);

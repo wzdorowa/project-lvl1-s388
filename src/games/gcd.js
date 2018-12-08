@@ -8,24 +8,17 @@ export const findGcd = (a, b) => {
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const getQuestion = () => {
+const getGameData = () => {
   const firstQuestion = getRandomInRange(1, 30);
   const lastQuestion = getRandomInRange(1, 20);
 
-  const question = {
-    value: `${firstQuestion} ${lastQuestion}`,
-    payload: {
-      firstQuestion,
-      lastQuestion,
-    },
+  const question = `${firstQuestion} ${lastQuestion}`;
+
+  const answer = findGcd(firstQuestion, lastQuestion);
+
+  return {
+    question,
+    answer,
   };
-  return question;
 };
-
-const getRightAnswer = question => findGcd(
-  question.payload.firstQuestion,
-  question.payload.lastQuestion,
-);
-
-const play = () => engine(description, getQuestion, getRightAnswer);
-export default play;
+export default() => engine(description, getGameData);
