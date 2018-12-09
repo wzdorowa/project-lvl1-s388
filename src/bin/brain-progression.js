@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { playProgress } from '../index';
+import { playProgress } from '..';
 
 playProgress();

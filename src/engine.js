@@ -6,20 +6,20 @@ const rightAnswersCount = 3;
 
 const engine = (description, getGameData) => {
   console.log(description);
-  const nameUser = greet();
+  const userName = greet();
 
   for (let iter = 0; iter < rightAnswersCount; iter += 1) {
-    const gameData = getGameData();
-    console.log(`Question: ${gameData.question}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (String(gameData.answer) === answer) {
+    const { question, answer } = getGameData();
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (answer === userAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${gameData.answer}.`);
-      console.log(`Let's try again, ${nameUser}!`);
+      console.log(`${answer} is wrong answer ;(. Correct answer was ${answer}.`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
   }
-  console.log(`Congratulation, ${nameUser}!`);
+  console.log(`Congratulation, ${userName}!`);
 };
 export default engine;

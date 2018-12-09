@@ -14,7 +14,7 @@ const getGameData = () => {
 
   const question = `${firstQuestion} ${lastQuestion}`;
 
-  const answer = findGcd(firstQuestion, lastQuestion);
+  const answer = String(findGcd(firstQuestion, lastQuestion));
 
   return {
     question,

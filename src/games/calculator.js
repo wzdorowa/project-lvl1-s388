@@ -29,7 +29,7 @@ export const getGameData = () => {
 
   const question = `${firstQuestion} ${sign} ${lastQuestion}`;
 
-  const answer = applyOperation(sign, firstQuestion, lastQuestion);
+  const answer = String(applyOperation(sign, firstQuestion, lastQuestion));
 
   return {
     question,
