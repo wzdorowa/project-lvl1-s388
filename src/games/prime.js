@@ -9,7 +9,7 @@ const isPrime = (num) => {
   return true;
 };
 
-const description = 'What number is missing in the progression?';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
 const getGameData = () => {
   const question = getRandomInRange(1, 100);
