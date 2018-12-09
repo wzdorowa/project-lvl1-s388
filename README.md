@@ -30,3 +30,7 @@ https://asciinema.org/a/P2TcMNUkm2e1AjoyglGViYfib
 ### Progression
 
 https://asciinema.org/a/m0T5FYDaZzDRAMX3hGltta9CC
+
+### Prime
+
+https://asciinema.org/a/vn45Q6Ftp4nXjIEiT543t2bZ4
