@@ -33,4 +33,4 @@ https://asciinema.org/a/m0T5FYDaZzDRAMX3hGltta9CC
 
 ### Prime
 
-https://asciinema.org/a/vn45Q6Ftp4nXjIEiT543t2bZ4
+https://asciinema.org/a/ggHpSPIYpEmTb4tMz8XFPpQlR
